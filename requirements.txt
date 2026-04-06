@@ -1,0 +1,157 @@
+PROYECTO API + FRONTEND SEPARADO (FASTAPI + TESTING)
+
+OBJETIVO:
+Construir una API profesional (backend) y una interfaz gráfica separada (frontend), con testing y buena arquitectura.
+
+---
+
+FASE 1 - ESTRUCTURA BASE
+
+Crear estructura:
+
+backend/
+├── app/
+│    ├── main.py
+│    ├── core/
+│    │    ├── database.py
+│    │    └── config.py
+│    ├── models/
+│    ├── schemas/
+│    ├── repositories/
+│    ├── services/
+│    ├── routes/
+│    └── dependencies/
+├── tests/
+│    ├── conftest.py
+│    ├── utils/
+│    └── test_items/
+├── requirements.txt
+├── pytest.ini
+└── .env
+
+frontend/
+├── index.html
+├── app.js
+└── styles.css
+
+---
+
+FASE 2 - BACKEND (API)
+
+1. FastAPI básico
+2. SQLite con SQLAlchemy
+3. CRUD completo (items)
+
+Separación correcta:
+
+* models → DB (SQLAlchemy)
+* schemas → validación (Pydantic)
+* repository → acceso a DB
+* service → lógica de negocio
+* routes → endpoints
+
+---
+
+FASE 3 - MEJORAS IMPORTANTES
+
+✔ Dependency Injection (Depends)
+✔ Manejo de errores (HTTPException)
+✔ Validaciones (schemas create/update)
+✔ Logs básicos
+
+---
+
+FASE 4 - TESTING (MUY IMPORTANTE)
+
+1. Pytest configurado
+
+2. Fixtures:
+
+   * client
+   * create_item
+
+3. Tests separados:
+
+   * test_get.py
+   * test_post.py
+   * test_put.py
+   * test_delete.py
+
+4. Helpers:
+   tests/utils/assertions.py
+
+5. Base de datos de testing:
+
+   * usar SQLite en memoria o archivo separado
+
+---
+
+FASE 5 - AUTENTICACIÓN (DESPUÉS)
+
+* JWT (login / register)
+* Protección de rutas
+* Hash de passwords (bcrypt)
+
+---
+
+FASE 6 - FRONTEND (SEPARADO)
+
+IMPORTANTE:
+El frontend NO usa templates de FastAPI.
+
+Se conecta vía HTTP:
+
+fetch("http://localhost:8000/items")
+
+Ejemplo:
+
+* HTML simple
+* JS con fetch API
+* Mostrar lista de items
+* Crear items desde formulario
+
+---
+
+FASE 7 - COMUNICACIÓN FRONTEND ↔ API
+
+* JSON únicamente
+* No usar Jinja2
+* No mezclar backend con frontend
+
+---
+
+FASE 8 - BUENAS PRÁCTICAS
+
+✔ No lógica en routes
+✔ Services manejan reglas
+✔ Repository solo DB
+✔ Tests independientes
+✔ .env para configuración
+
+---
+
+FASE 9 - ESCALABILIDAD
+
+* Docker (opcional)
+* PostgreSQL (en vez de SQLite)
+* Alembic (migraciones)
+* Logging estructurado
+
+---
+
+FASE FINAL
+
+Tendrás:
+
+✔ API profesional
+✔ Testing sólido
+✔ Frontend desacoplado
+✔ Base lista para crecer
+
+---
+
+NOTA CLAVE:
+
+"Separar frontend y backend es lo que hacen las empresas reales"
+
+Esto que estás construyendo ya es nivel profesional.
