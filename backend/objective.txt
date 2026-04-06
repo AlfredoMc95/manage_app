@@ -40,7 +40,7 @@ FASE 2 - BACKEND (API)
 
 1. FastAPI básico
 2. SQLite con SQLAlchemy
-3. CRUD completo (items)
+3. CRUD completo (items)    ----
 
 Separación correcta:
 
